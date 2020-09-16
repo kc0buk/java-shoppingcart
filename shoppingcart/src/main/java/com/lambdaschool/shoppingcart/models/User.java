@@ -78,6 +78,10 @@ public class User
         this.password = passwordEncoder.encode(password);
     }
 
+    public void setNoEncodePassword(String password) {
+        this.password = password;
+    }
+
     public String getComments()
     {
         return comments;

@@ -30,8 +30,13 @@ public class CartController
     private HelperFunctions helperFunctions;
 
     @GetMapping(value = "/user", produces = {"application/json"})
-    public ResponseEntity<?> listAllCarts(@PathVariable long userid)
-    {
+    public ResponseEntity<?> listAllCarts() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        User authenticatedUser = userrepos.findByUsername(authentication.getName().toLowerCase());
+
+        Long userid = authenticatedUser.getUserid();
+
         List<Cart> myCarts = cartService.findAllByUserId(userid);
         return new ResponseEntity<>(myCarts, HttpStatus.OK);
     }
