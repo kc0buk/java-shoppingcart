@@ -13,7 +13,7 @@ import java.util.List;
  * into any class.
  */
 @Component
-public class HelperFunctions
+public class HelperFunction
 {
     /**
      * Searches to see if the exception has any constraint violations to report

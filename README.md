@@ -533,16 +533,16 @@ STATUS OK
 ### MVP
 
 * [ ] Add OAuth2 Security to the application
-  * [ ] Add the necessary dependencies
+  * [x] Add the necessary dependencies
   * [x] Add the models to represent Roles and the join table between Roles and Users
     * [x] Two roles will be used - Admin for access to all of the system and User for access to only the
      authenticated user's information
   * [x] In the existing User model add fields for password and roles including associated getters, setters, and other
    needed methods
   * [x] Add findByName to the User Service with associated repository entry
-  * [ ] Add the necessary helper functions
-  * [ ] Add the SecurityUserService service
-  * [ ] Add and update the necessary configuration files
+  * [x] Add the necessary helper functions
+  * [x] Add the SecurityUserService service
+  * [x] Add and update the necessary configuration files
 * [ ] The initial endpoints are affected by security as follows
   * [ ] http://localhost:2019/users/users
     * [ ] Only users with role Admin can access this endpoint
@@ -559,9 +559,11 @@ STATUS OK
   * [ ] POST http://localhost:2019/carts/create/product/1
     * [ ] Drop the user path variable and create a new cart for the authenticated user
   * [ ] PUT http://localhost:2019/carts/update/cart/1/product/1
-    * [ ] Any user with role Admin can access this endpoint. Any user with role User can only access carts that they own. This would similar to the function in our usermodel under OAuth2 for updating a user using the helper.isAuthorizedToMakeChange() method. You can get the current authenticated use from the userAuditor field!
+    * [x] Any user with role Admin can access this endpoint. Any user with role User can only access carts that they
+     own. This would similar to the function in our usermodel under OAuth2 for updating a user using the helper.isAuthorizedToMakeChange() method. You can get the current authenticated use from the userAuditor field!
   * [ ] DELETE http://localhost:2019/carts/delete/cart/1/product/1
-    * [ ] Any user with role Admin can access this endpoint. Any user with role User can only access carts that they own.  This would similar to the function in our usermodel under OAuth2 for updating a user using the helper.isAuthorizedToMakeChange() method. You can get the current authenticated use from the userAuditor field!
+    * [x] Any user with role Admin can access this endpoint. Any user with role User can only access carts that they
+     own.  This would similar to the function in our usermodel under OAuth2 for updating a user using the helper.isAuthorizedToMakeChange() method. You can get the current authenticated use from the userAuditor field!
   * [ ] http://localhost:2019/products/products
     * [ ] Only users with role Admin can access this endpoint
   * [ ] http://localhost:2019/products/product/1

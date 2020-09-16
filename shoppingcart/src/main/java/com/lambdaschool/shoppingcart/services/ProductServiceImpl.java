@@ -25,6 +25,9 @@ public class ProductServiceImpl
     @Autowired
     private CartRepository cartrepos;
 
+    @Autowired
+    private HelperFunctions helperFunctions;
+
     /**
      * Connects this service to the auditing service in order to find the current user
      */
